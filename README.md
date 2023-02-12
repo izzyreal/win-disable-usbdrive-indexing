@@ -3,13 +3,17 @@ Windows 10 registry patches to disable and enable USB drive indexing to prevent 
 
 ## Usage
 
-Download the registry patches from the release page.
+Download the registry patches from [the release page](https://github.com/izzyreal/win-disable-usbdrive-indexing/releases/tag/v1.0) or from here:
+
+[DisableRemovableDriveIndexing patch](https://raw.githubusercontent.com/izzyreal/win-disable-usbdrive-indexing/main/DisableRemovableDriveIndexing.reg)
+
+[EnableRemovableDriveIndexing patch](https://raw.githubusercontent.com/izzyreal/win-disable-usbdrive-indexing/main/EnableRemovableDriveIndexing.reg)
 
 Double-click a `.reg` file of your choice and follow the on-screen instructions to patch your registry.
 
-`DisableRemovableDriveIndexing.reg` is for disabling indexing, meaning that Windows will not pollute your USB drives with metadata in a `System Volume Information` directory. It adds a key to `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search` called `DisableRemovableDriveIndexing` and sets its value to `1`.
+`DisableRemovableDriveIndexing.reg` is for disabling indexing, meaning that Windows will not pollute your USB drives with metadata in a `System Volume Information` directory that it creates on your USB drive. The patch adds a key to `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search` called `DisableRemovableDriveIndexing` and sets its value to `1`.
 
-`EnableRemovableDriveIndexing.reg` is for enabling back indexing. This removes the key mentioned earlier. Any other keys in `Windows Search` will remain untouched.
+`EnableRemovableDriveIndexing.reg` is for enabling back indexing. This patch removes the key mentioned earlier. Any other keys in `Windows Search` will remain untouched.
 
 ## What is the worst that could happen?
 
